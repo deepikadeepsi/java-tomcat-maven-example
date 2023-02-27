@@ -5,7 +5,6 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn clean install
-      - ls -la
 artifacts:
   files:
     - '**/*'
