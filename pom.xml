@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>java-tomcat-maven-example</artifactId>
-  <packaging>jar</packaging> <!-- Change packaging type to jar -->
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>hello Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -35,6 +35,17 @@
             </manifestEntries>
           </archive>
         </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>war</goal>
+            </goals>
+            <configuration>
+              <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
